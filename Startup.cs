@@ -1,4 +1,5 @@
 using BookStores_API.Data;
+using BookStores_API.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -36,6 +37,9 @@ namespace BookStores_API
             //Configure DBContext wwith SQL
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
 
+
+            //Configure the Services
+            services.AddTransient<BooksService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BookStores_API", Version = "v1" });
@@ -62,6 +66,8 @@ namespace BookStores_API
             {
                 endpoints.MapControllers();
             });
+
+            AppDbInitializer.Seed(app);
         }
     }
 }
