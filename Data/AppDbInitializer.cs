@@ -26,7 +26,6 @@ namespace BookStores_API.Data
                         DateRead = DateTime.Now.AddDays(-10),
                         Rate = 4,
                         Genre = "Biography",
-                        Author = "first author",
                         CoverUrl = "https...",
                         DateAdded = DateTime.Now
                     },
@@ -36,7 +35,6 @@ namespace BookStores_API.Data
                         Description = "1nd description book",
                         IsReal = false,
                         Genre = "Biography",
-                        Author = "first author",
                         CoverUrl = "https...",
                         DateAdded = DateTime.Now
                     });

@@ -40,7 +40,6 @@ namespace BookStores_API.Data.Services
                 _book.DateRead = book.IsReal ? book.DateRead.Value : null;
                 _book.Rate = book.IsReal ? book.Rate.Value : null;
                 _book.Genre = book.Genre;
-                _book.Author = book.Author;
                 _book.CoverUrl = book.CoverUrl;
                 _context.SaveChanges();
             }
