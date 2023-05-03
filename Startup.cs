@@ -40,6 +40,8 @@ namespace BookStores_API
 
             //Configure the Services
             services.AddTransient<BooksService>();
+            services.AddTransient<AuthorsService>();
+            services.AddTransient<PublishersService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BookStores_API", Version = "v1" });
@@ -67,7 +69,7 @@ namespace BookStores_API
                 endpoints.MapControllers();
             });
 
-            AppDbInitializer.Seed(app);
+            //AppDbInitializer.Seed(app);
         }
     }
 }
